@@ -1,0 +1,13 @@
+CREATE TABLE `response_time_calculated_logs` (
+  `path_group` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  `avg` int(11) NOT NULL,
+  `max` int(11) NOT NULL,
+  `min` int(11) NOT NULL,
+  `p90` int(11) NOT NULL,
+  `p80` int(11) NOT NULL,
+  `p50` int(11) NOT NULL,
+  `p20` int(11) NOT NULL,
+  `p10` int(11) NOT NULL,
+  UNIQUE KEY `path_group` (`path_group`,`date`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

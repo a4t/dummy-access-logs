@@ -1,0 +1,19 @@
+version: '3.2'
+services:
+  mysql:
+    image: mysql:5.7.19
+    ports:
+      - "23306:3306"
+    environment:
+      MYSQL_DATABASE: accesslog
+      MYSQL_ROOT_PASSWORD: localdocker
+    volumes:
+      - ./db:/db
+
+  app:
+    build:
+      context: ./app
+      args:
+        - version=2.6.4
+    volumes:
+      - ./app:/app
